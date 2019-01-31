@@ -6,8 +6,8 @@
 
         string GetFullFilePath();
 
-        bool GetBackupExists();
+        FileBackupStatus GetBackupStatus();
 
-        void SetBackupExists(bool backupExists);
+        void SetBackupStatus(FileBackupStatus backupExists);
     }
 }

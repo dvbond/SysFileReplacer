@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using SysFileReplacer.Files;
 using SysFileReplacer.Resources;
 
 namespace SysFileReplacer
@@ -11,7 +12,7 @@ namespace SysFileReplacer
     {
         static void Main(string[] args)
         {
-            if (!OSIdentifier.IsCurrentOsSupported())
+            if (!OSVersionValidator.IsCurrentOsSupported(new OSVersion()))
             {
                 Console.WriteLine(Strings.CurrentOperationSystemIsNotSupported);
                 Console.WriteLine(Strings.PressAnyKeyToContinue);
@@ -29,7 +30,7 @@ namespace SysFileReplacer
                 var fileReplacer = new FileReplacer();
 
                 fileBackupGenerator.BackupFiles(files);
-                fileReplacer.ReplaceFiles(files.Where(f => f.GetBackupExists()));
+                fileReplacer.ReplaceFiles(files.Where(f => f.GetBackupStatus() != FileBackupStatus.BackupNotCreated));
             }
             else
             {

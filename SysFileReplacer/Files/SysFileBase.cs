@@ -2,20 +2,20 @@
 {
     internal abstract class SysFileBase : ISysFile
     {
-        private bool _backupExists = false;
+        private FileBackupStatus _backupStatus = FileBackupStatus.BackupNotCreated;
 
         public abstract string GetFileName();
 
         public abstract string GetFullFilePath();
 
-        public bool GetBackupExists()
+        public FileBackupStatus GetBackupStatus()
         {
-            return _backupExists;
+            return _backupStatus;
         }
 
-        public void SetBackupExists(bool backupExists)
+        public void SetBackupStatus(FileBackupStatus backupStatus)
         {
-            _backupExists = backupExists;
+            _backupStatus = backupStatus;
         }
     }
 }

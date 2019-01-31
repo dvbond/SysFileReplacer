@@ -8,12 +8,17 @@ namespace SysFileReplacer
 {
     internal sealed class FileBackupGenerator
     {
-        private readonly string _backupDirectoryPath;
+        private string _backupDirectoryPath;
 
         internal FileBackupGenerator()
         {
             var pathRoot = Path.GetPathRoot(Environment.SystemDirectory);
-            _backupDirectoryPath = string.Concat(pathRoot, "\\Bak");
+            _backupDirectoryPath = string.Concat(pathRoot, "\\Backup");
+        }
+
+        internal void SetBackupDirectoryPath(string backupDirectoryPath)
+        {
+            _backupDirectoryPath = backupDirectoryPath;
         }
 
         internal void BackupFiles(IEnumerable<ISysFile> files)
@@ -36,20 +41,22 @@ namespace SysFileReplacer
                     {
                         File.Copy(file.GetFullFilePath(), destinationPath, true);
                         Console.WriteLine(Strings.BackupForFileCreated, file.GetFileName());
+
+                        file.SetBackupStatus(FileBackupStatus.BackupCreated);
                     }
                     else
                     {
                         Console.WriteLine(Strings.BackupForFileIsAlreadyExist, file.GetFileName());
-                    }
 
-                    file.SetBackupExists(true);
+                        file.SetBackupStatus(FileBackupStatus.BackupAlreadyCreated);
+                    }
                 }
                 catch(Exception ex)
                 {
                     Console.WriteLine(Strings.CannotCreateBackupForFile, file.GetFileName());
                     Console.WriteLine(ex.Message);
 
-                    file.SetBackupExists(false);
+                    file.SetBackupStatus(FileBackupStatus.BackupNotCreated);
                 }
             }
         }

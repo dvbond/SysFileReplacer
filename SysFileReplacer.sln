@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysFileReplacer", "SysFileReplacer\SysFileReplacer.csproj", "{C9EB0929-9981-4767-AED2-A156FADDC2C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysFileReplacerTests", "SysFileReplacerTests\SysFileReplacerTests.csproj", "{7E4CF3D7-62BE-4C04-BBAC-3FC828A44932}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C9EB0929-9981-4767-AED2-A156FADDC2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9EB0929-9981-4767-AED2-A156FADDC2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9EB0929-9981-4767-AED2-A156FADDC2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4CF3D7-62BE-4C04-BBAC-3FC828A44932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4CF3D7-62BE-4C04-BBAC-3FC828A44932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4CF3D7-62BE-4C04-BBAC-3FC828A44932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4CF3D7-62BE-4C04-BBAC-3FC828A44932}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

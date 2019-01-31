@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileSecurity.cs" />
+    <Compile Include="Files\FileBackupStatus.cs" />
     <Compile Include="Files\NsLookupSysFile.cs" />
     <Compile Include="Files\SysFileBase.cs" />
     <Compile Include="Files\Twain32SysFile.cs" />
@@ -66,7 +67,8 @@
     <Compile Include="Native\TokenPrivileges.cs" />
     <Compile Include="Native\TokenPrivilegesFlags.cs" />
     <Compile Include="Native\Tokens.cs" />
-    <Compile Include="OSIdentifier.cs" />
+    <Compile Include="OSVersionValidator.cs" />
+    <Compile Include="OSVersion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Strings.Designer.cs">

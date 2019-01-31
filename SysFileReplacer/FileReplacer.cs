@@ -25,7 +25,7 @@ namespace SysFileReplacer
 
                 var isCurrentExecutableFile = file.GetFullFilePath().Equals(_currentAssemblyLoc, StringComparison.OrdinalIgnoreCase);
 
-                if (!isCurrentExecutableFile && (OSIdentifier.IsWindowsXp() || TakeFileOwnership(file)))
+                if (!isCurrentExecutableFile && (OSVersionValidator.IsWindowsXp(new OSVersion()) || TakeFileOwnership(file)))
                 {
                     DisableWindowsFileProtection(file);
                     ReplaceFile(file);
